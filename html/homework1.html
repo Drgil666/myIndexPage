@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="My Personal Web"><!--网页描述-->
+    <meta name="keywords" content="HTML,CSS,JavaScript"><!--关键词-->
+    <meta name="author" content="DrGilbert"><!--作者-->
+    <title>My Page</title>
+    <link rel="stylesheet" type="text/css" href="../css/homework1.css" media="all"/>
+</head>
+<body>
+<label>作业1</label>
+<hr/>
+<table border="3" style="width: 300px;border-color: darkseagreen">
+    <tr style="height: 80px;">
+        <td colspan="3"></td>
+    </tr>
+    <tr style="height: 20px;">
+        <td></td>
+        <td colspan="2"></td>
+    </tr>
+    <tr style="height: 80px">
+        <td style="width: 60px"></td>
+        <td style="width: 80px"></td>
+        <td style="width: 60px"></td>
+    </tr>
+    <tr style="height: 80px;">
+        <td colspan="3"></td>
+    </tr>
+</table>
+<hr/>
+<label>作业2</label>
+<hr/>
+<table border="3" style="border-color: darkseagreen">
+    <tr>
+        <td rowspan="8">
+            <img class="row8" src="../image/ui/logo1.jpg" alt="图片加载失败!">
+        </td>
+        <td rowspan="4" class="row4"></td>
+        <td rowspan="2" class="row2"></td>
+        <td class="row1"></td>
+    </tr>
+    <tr>
+        <td class="row1"></td>
+    </tr>
+    <tr>
+        <td class="row2" rowspan="2"></td>
+        <td class="row1"></td>
+    </tr>
+    <tr>
+        <td class="row1"></td>
+    </tr>
+    <tr>
+        <td rowspan="4" class="row4"></td>
+        <td rowspan="2" class="row2"></td>
+        <td class="row1"></td>
+    </tr>
+    <tr>
+        <td class="row1"></td>
+    </tr>
+    <tr>
+        <td class="row2" rowspan="2"></td>
+        <td class="row1"></td>
+    </tr>
+    <tr>
+        <td class="row1"></td>
+    </tr>
+</table>
+<hr/>
+作业3
+<hr/>
+<table border="3" cellspacing="0" style="border-color: blue">
+    <tr>
+        <td colspan="3" style="text-align: center;font-weight: bold;color: darkblue">网站主办者用户注册</td>
+    </tr>
+    <tr>
+        <td class="row_1">用户名：</td>
+        <td class="row_2">
+            <input class="text_username" type="text" value="用户自定义(如：张三或张三2)"/>&nbsp;*
+            <a href="">检测</a>
+        </td>
+        <td class="row_3">注：用户名中只允许输入中文字符、英文字符、数字和下划线。<br/>
+            如果您想查找已经注册的用户名的手机或邮件验证码，
+            请在用户名处输入您已注册的用户名的手机或邮件验证码，
+            请在用户名处输入您已注册的用户名，点击检测，便可得到已注册用户的手机或邮件验证码！
+        </td>
+    </tr>
+    <tr>
+        <td class="row_1">密码：</td>
+        <td class="row_2">
+            <input class="text_password" type="password"/>&nbsp;*
+        </td>
+        <td class="row_3">注：密码至少6位，不能全是数字，并且不能与用户名相同。</td>
+    </tr>
+    <tr>
+        <td class="row_1">请再次输入密码：</td>
+        <td class="row_2">
+            <input class="text_password" type="password"/>&nbsp;*
+        </td>
+        <td class="row_3"></td>
+    </tr>
+    <tr>
+        <td class="row_1">所在省/自治区/直辖市：</td>
+        <td class="row_2">
+            <select name="select" class="text_selector">
+                <option value="1">上海</option>
+                <option value="2">北京</option>
+                <option value="3">杭州</option>
+                <option value="4">深圳</option>
+            </select>&nbsp;*
+        </td>
+        <td class="row_3"></td>
+    </tr>
+    <tr>
+        <td class="row_1">姓名：</td>
+        <td class="row_2">
+            <input class="text_text" type="text" value="张三"/>&nbsp;*
+        </td>
+        <td class="row_3"></td>
+    </tr>
+    <tr>
+        <td class="row_1">移动公司电话：</td>
+        <td class="row_2">
+            <input class="text_text" type="text" value="13800138000"/>&nbsp;*
+        </td>
+        <td class="row_3">注：您所填写的手机号码，用户接收手机验证码，
+            该项为可选项，但移动电公司话号码和连通公司电话号码至少要填写一项。
+        </td>
+    </tr>
+    <tr>
+        <td class="row_1">联通公司电话：</td>
+        <td class="row_2">
+            <input class="text_text" type="text" value="如是联通号码请写此处"/>&nbsp;*
+        </td>
+        <td class="row_3">注：您所填写的手机号码，用户接收手机验证码，
+            该项为可选项，但移动电公司话号码和连通公司电话号码至少要填写一项。
+        </td>
+    </tr>
+    <tr>
+        <td class="row_1">小灵通电话：</td>
+        <td class="row_2">
+            <input type="text" style="background-color:#B7E8BD;width: 80px;font-size: 18px;" value=""/>&nbsp;-&nbsp;&nbsp;
+            <input type="text" style="background-color:#B7E8BD;width: 150px;font-size: 18px;" value=""/>
+        </td>
+        <td class="row_3">注：小灵通电话号码可填写多个，以半角分号“;”分隔。
+            小灵通电话填写标准格式：国家代码-区号-号码，例如086-010-82998299。
+            该项为可选项，该功能暂不启用。
+        </td>
+    </tr>
+    <tr>
+        <td class="row_1">电子邮箱：</td>
+        <td class="row_2">
+            <input type="text" class="text_text" value="您最常用，且接收邮件最稳定的邮箱"/>&nbsp;*
+        </td>
+        <td class="row_3">注：您所填写的电子邮箱主要用于接受邮箱验证码。
+            例如：xyz@213.abc。
+        </td>
+    </tr>
+    <tr>
+        <td class="row_1">备注：</td>
+        <td class="row_2">
+            <textarea class="text_textarea">此处无需填写</textarea>
+        </td>
+        <td class="row_3"></td>
+    </tr>
+    <tr>
+        <td class="row_1">验证码：</td>
+        <td class="row_2">
+            <input style="width: 85px;font-size: 18px;" type="text" value="9255"/>
+            <img src="../image/ui/img2.png" alt="图片加载失败!">
+        </td>
+        <td class="row_3"></td>
+    </tr>
+    <tr>
+        <td style="height: 50px;" colspan="3"></td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="div">
+                <a href="">注册</a>&nbsp;&nbsp;&nbsp;
+                <a href="">取消</a>
+            </div>
+        </td>
+    </tr>
+</table>
+<hr/>
+作业4
+<hr/>
+<h1>习近平关心的那些“小事”</h1>
+<hr/>
+<div style="height: 50px">
+    <span>2020年10月28日 08:19</span>
+    <a href="">人民日报客户端</a>
+    <img style="width: 349px;height: 43px;float: right" src="../image/ui/test3.png" alt="图片加载失败!">
+</div>
+<hr/>
+<div class="article">
+    <p>原标题：习近平关心的那些“小事”</p>
+    <p>10月26日至29日，党的十九届五中全会在北京召开，会议将为未来5年乃至15年中国发展擘画蓝图。</p>
+    <p>
+        刚刚过去的五年，中国在做好各项国家大事的同时，也在大力推进一桩桩民生“小事”发生积极变化。餐饮浪费、垃圾分类、农村厕所改造、“小眼镜”等老百姓身边的“小事”，都是习近平总书记心中实实在在的“大事”，他在“十三五”期间多次作出重要指示，进行强力部署。五年来，很多“小”事都有了“大”变化。 </p>
+</div>
+<div align="center">
+    <img src="../image/ui/img3.jpg" alt="图片显示失败!">
+</div>
+<hr/>
+</body>
+</html>

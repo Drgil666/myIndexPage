@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head><!--头部元素,所有的meta都在这里-->
+    <meta charset="UTF-8"><!--页面编码-->
+    <meta http-equiv="Refresh" content="5"><!--每隔content（单位是秒）刷新页面-->
+    <title>Just A Test</title><!--网页标题-->
+    <meta name="description" content="My Web Test"><!--网页描述-->
+    <meta name="keywords" content="HTML,CSS,JavaScript"><!--关键词-->
+    <meta name="author" content="DrGilbert"><!--作者-->
+</head>
+<body><!--<style>用来设置样式(功能上类似CSS)-->
+<hr/>   
+<h1>111</h1><!--一级标题-->
+<p>&quot;a&nbsp;Para1&nbsp;test&quot;</p><!--块状段落，结尾会有一个小空行-->
+<br/><!--换行-->
+<hr/><!--水平线-->
+<b>another test</b><!--粗体,和<strong>显示上相同-->
+<big>a test</big><!--字体加大一号,允许嵌套,最多大7号-->
+<em>test123</em><!--斜体,不推荐<i>-->
+<small>a test</small><!--字体减少一号,可以无限嵌套直到变为1号字-->
+<sub>123</sub><!--下标字体-->
+<sup>456</sup><!--上标字体-->
+<ins>test1111</ins><!--下划线-->
+<del>test1234</del><!--删除线-->
+<hr/>
+<div style="font-size: 20px;text-align:center;border: 1px red solid"><!--分区用,末尾会换行,将网页分为块-->
+    <!--border是边框-->
+    <span style="color: blue"><!--行内分块元素-->
+        test font
+    </span>
+</div>
+<hr/>
+<a href="https://www.baidu.com">百度</a><!--超链接-->
+<hr/>
+<img src="../image/ui/logo1.jpg" width="500" height="500" alt="图片无法显示"/>
+<!--如果图像无法显示,则显示alt的内容-->
+<hr/>
+<ol style="list-style-type: upper-alpha"><!--有编号列表,可以嵌套-->
+    <!--list-style-type对应的是编号的类型-->
+    <!--none:无符号;disc(默认)实心圆-->
+    <!--circle:空心圆;square:小方块-->
+    <!--decimal:数字-->
+    <!--upper-alpha:大写英文字母-->
+    <!--lower-alpha:小写英文字母-->
+    <!--upper-roman:大写罗马字母-->
+    <!--lower-roman:小写罗马字母-->
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+</ol>
+<hr/>
+<table border="1" cellspacing="0">
+    <!--表格,border表示边框宽度,cellspacing是单元格之间距离-->
+    <caption>表格标题</caption><!--表格标题-->
+    <tr>
+        <th>表头1</th><!--表头,内容会加粗居中-->
+        <th>表头2</th>
+    </tr>
+    <tr><!--每一行-->
+        <td>字段1</td><!--每一列,每一列的个数可以不相同-->
+        <td>字段2</td>
+    </tr>
+    <tr>
+        <td>字段3</td>
+        <td>字段4</td>
+        <td>字段5</td>
+    </tr>
+    <tr>
+        <td colspan="2" rowspan="2">test123456</td>
+        <!--colspan 横跨列数,rowspan横跨行数-->
+        <td>字段9</td>
+        <td>字段10</td>
+    </tr>
+    <tr>
+        <td>字段6</td>
+        <td>字段7</td>
+        <td>字段8</td>
+    </tr>
+</table>
+<hr/>
+<form action="" method="post">
+    <label>用户名:</label>
+    <input name="username" maxlength="20" type="text"/>
+    <br/>
+    <label>&nbsp;&nbsp;&nbsp;密码:</label>
+    <input name="password" maxlength="20" type="password"/>
+    <br/>
+    <input name="radio" type="radio" value="*"/> 单选框
+    <br/>
+    <input type="checkbox" name="checkbox" value="1"/> 复选框1
+    <input type="checkbox" name="checkbox" value="2"/> 复选框2
+    <input type="date" name="day"/>
+    <input type="submit" value="提交表单"/>
+</form>
+<hr/>
+<select name="select">
+    <option value="1">1</option>
+    <option value="2" selected>2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+</select>
+<hr/>
+<textarea style="resize: none" rows="10" cols="30"></textarea>
+<hr/>
+<button onclick="alert('hello world!')">点击</button>
+<hr/>
+<audio controls>
+    <source src="" type="audio/ogg">
+    <source src="" type="audio/mpeg">
+</audio>
+<hr/>
+<video width="300" height="200" controls>
+    <source src="" type="video/mp4">
+    <source src="" type="video/ogg">
+</video>
+<hr/>
+</body>
+</html>

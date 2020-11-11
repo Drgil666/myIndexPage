@@ -1,0 +1,156 @@
+.body {
+    background-image: url("../image/background/background1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+.search {
+    z-index: -2;
+    position: fixed;
+    width: 620px;
+    height: 300px;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    /*background-color: red;*/
+    opacity: 1;
+}
+
+.search_image {
+    z-index: 0;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.search_background {
+    z-index: -1;
+    background-color: black;
+    position: relative;
+    width: 600px;
+    height: 42px;
+    top: 80%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.search_select {
+    z-index: 2;
+    outline: none;
+    width: 100px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 25px;
+    position: absolute;
+    top: 81%;
+    left: 10px;
+    right: 0;
+    font-size: 17px;
+    text-align: center;
+    text-align-last: center;
+    background-color: black;
+    color: white;
+}
+
+.search_select:hover {
+    color: #E7D9F0;
+}
+
+.bookmark {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    z-index: 2;
+    position: absolute;
+    width: 300px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: black;
+    border: 5px;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.bookmark::-webkit-scrollbar {
+    width: 0px;
+}
+
+.bookmark:hover {
+    opacity: 0.5;
+    transition: all 1s;
+}
+
+.bookmark_item {
+    width: 120px;
+    height: 120px;
+    /*top: 20px;*/
+    /*background-color: blue;*/
+}
+
+/*.bookmark_item:active {*/
+/*    background-color: grey;*/
+/*}*/
+
+.bookmark_table {
+    border: 1px solid transparent;
+}
+
+.bookmark_img {
+    position: relative;
+    opacity: 1;
+    width: 90px;
+    height: 90px;
+    left: 20px;
+    border-radius: 45px;
+    border: none;
+}
+
+.bookmark_img:active {
+    opacity: 0.3;
+}
+
+.bookmark_nick {
+    position: relative;
+    left: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+}
+
+.search_keyword {
+    z-index: 1;
+    outline: none;
+    position: absolute;
+    width: 500px;
+    height: 40px;
+    top: 80%;
+    left: 100px;
+    right: 0;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 25px;
+    font-size: 17px;
+    background-color: black;
+    color: white;
+}
+
+.setting_button {
+    z-index: 2;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 25px;
+    font-size: 17px;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+}
