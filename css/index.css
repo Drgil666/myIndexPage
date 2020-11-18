@@ -82,7 +82,7 @@
 }
 
 .bookmark::-webkit-scrollbar {
-    width: 0px;
+    width: 0;
 }
 
 .bookmark:hover {
@@ -115,13 +115,14 @@
     border: none;
 }
 
-.bookmark_img:active {
+.bookmark_img:hover {
     opacity: 0.3;
+    transition: all 0.5s;
 }
 
 .bookmark_nick {
     position: relative;
-    left: 10px;
+    left: 11px;
     text-align: center;
     font-size: 18px;
     color: white;
@@ -153,4 +154,9 @@
     text-align: center;
     width: 200px;
     height: 50px;
+}
+
+.setting_button:hover {
+    opacity: 0.5;
+    transition: all 0.5s;
 }

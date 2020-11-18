@@ -16,18 +16,18 @@
     <img class="search_image" src="../image/ui/logo1.jpg" alt="图片显示失败!">
     <!--    搜索框背景-->
     <div class="search_background"></div>
-    <form name="search_form" action="" onsubmit="search()" method="get">
-        <!--        搜索类型列表-->
-        <select class="search_select" name="search_select">
-            <option value="google" selected>Google</option>
-            <option value="baidu">百度</option>
-            <option value="google_trans">谷歌翻译</option>
-            <option value="baidu_trans">百度翻译</option>
-            <option value="github">Github</option>
-        </select>
-        <!--        搜索框-->
-        <input class="search_keyword" name="keyword" autocomplete="off" spellcheck="false" type="text"
-               placeholder="在这里搜索"/>
+    <input name="search_form" action="" onsubmit="search()" method="get">
+    <!--        搜索类型列表-->
+    <select class="search_select" name="search_select">
+        <option value="google" selected>Google</option>
+        <option value="baidu">百度</option>
+        <option value="google_trans">谷歌翻译</option>
+        <option value="baidu_trans">百度翻译</option>
+        <option value="github">Github</option>
+    </select>
+    <!--        搜索框-->
+    <input class="search_keyword" name="keyword" autocomplete="off" spellcheck="false" type="text"
+           placeholder="在这里搜索"/>
     </form>
 </div>
 <!--跳转对应的网页-->
@@ -36,8 +36,8 @@
         let value = document.forms["search_form"]["search_select"].value;
         let keyword = document.forms["search_form"]["keyword"].value;
         if (keyword !== "") {
-            console.log(value);
-            console.log(keyword);
+            console.log("value=" + value);
+            console.log("keyword=" + keyword);
             window.event.returnValue = false;
             switch (value) {
                 case "google": {
@@ -76,14 +76,18 @@
     <script>
         document.write("<table cellspacing='15' class='bookmark_table'>")
         let bookMarkList = get()
-        for (let rowIndex = 0; rowIndex <bookMarkList.length / 2; rowIndex++) {
+        for (let rowIndex = 0; rowIndex < bookMarkList.length / 2; rowIndex++) {
             document.write("<tr>")
-            for (let colsIndex = 0; colsIndex + rowIndex * 2 < bookMarkList.length; colsIndex++) {
-                let index=colsIndex + rowIndex * 2
-                document.write("<td class='bookmark_item'>")
-                document.write("<img class='bookmark_img' src='"+bookMarkList[index].img+"'>")
+            for (let colsIndex = 0; colsIndex + rowIndex * 2 < bookMarkList.length && colsIndex <= 1; colsIndex++) {
+                console.log("rowIndex=" + rowIndex);
+                console.log("colsIndex=" + colsIndex);
+                let index = colsIndex + rowIndex * 2
+                document.write("<td class='bookmark_item' onclick='window.open(\"https://" + bookMarkList[index].url + "\")'>")
+                document.write("<div>")
+                document.write("<img class='bookmark_img' src='" + bookMarkList[index].img + "' alt='图片加载失败!'>")
                 document.write("<div class='bookmark_nick'>")
                 document.write(bookMarkList[index].nick)
+                document.write("</div>")
                 document.write("</div>")
                 document.write("<td>")
             }
