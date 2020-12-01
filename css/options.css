@@ -1,0 +1,53 @@
+.top_bar {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 50px;
+    background: black;
+    border: 0.5px solid white;
+}
+
+.top_bar .label {
+    position: relative;
+    top: 7px;
+    left: 25px;
+    font-family: 微软雅黑;
+    font-size: 25px;
+    color: white;
+}
+
+.left {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    width: 300px;
+    top: 54px;
+    border: 0.5px solid white;
+    background: black;
+}
+
+.left .item {
+    position: relative;
+    height: 50px;
+    left: 0;
+    width: 298px;
+    border: 0.5px solid white;
+    transition: all 0.5s;
+}
+
+.left .item:hover {
+    background-color: grey;
+    /*opacity: 0.3;*/
+    transition: all 0.5s;
+}
+
+.left .item .label {
+    position: relative;
+    font-family: 微软雅黑;
+    font-size: 20px;
+    color: white;
+    left: 15px;
+    top: 10px;
+    background: transparent;
+}

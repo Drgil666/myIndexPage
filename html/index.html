@@ -20,8 +20,8 @@
     <form name="search_form" action="" onsubmit="search()" method="get">
         <!--        搜索类型列表-->
         <select class="search_select" name="search_select">
-            <option value="google" selected>Google</option>
-            <option value="baidu">百度</option>
+            <option value="google">Google</option>
+            <option value="baidu" selected>百度</option>
             <option value="google_trans">谷歌翻译</option>
             <option value="baidu_trans">百度翻译</option>
             <option value="github">Github</option>
@@ -70,19 +70,13 @@
     }
 </script>
 <div>
-    <button onclick="" class="setting_button">更换壁纸</button>
-</div>
-<br/>
-<div>
-    <button onclick="" class="setting_button">设置</button>
+    <button onclick="window.open('options.html')" class="setting_button">设置</button>
 </div>
 <!--收藏夹-->
 <div class="bookmark">
     <script>
-        // test1()
-        test2()
         document.write("<table cellspacing='15' class='bookmark_table'>")
-        let bookMarkList = get()
+        let bookMarkList = getBookMarkList()
         for (let rowIndex = 0; rowIndex < bookMarkList.length / 2; rowIndex++) {
             document.write("<tr>")
             for (let colsIndex = 0; colsIndex + rowIndex * 2 < bookMarkList.length && colsIndex <= 1; colsIndex++) {

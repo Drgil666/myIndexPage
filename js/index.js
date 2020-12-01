@@ -1,6 +1,6 @@
 const url = "10.21.234.24:8080"
 
-function get() {
+function getBookMarkList() {
     let bookMarkList = [
         {
             "url": "www.baidu.com",
@@ -43,7 +43,6 @@ function test1() {
 }
 
 function test2() {
-
     $.ajax({
             type: "post",
             url: "http://10.21.234.24:8080/api/user",

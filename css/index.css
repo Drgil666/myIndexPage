@@ -23,6 +23,7 @@
     width: 200px;
     height: 200px;
     position: absolute;
+    background: transparent;
     top: 10%;
     left: 0;
     right: 0;
@@ -106,6 +107,7 @@
 }
 
 .bookmark_img {
+    transition: all 0.5s;
     position: relative;
     opacity: 1;
     width: 90px;
@@ -158,6 +160,7 @@
     -webkit-text-stroke:0.5px black;
     width: 100px;
     height: 50px;
+    transition: all 0.5s;
 }
 
 .setting_button:hover {
