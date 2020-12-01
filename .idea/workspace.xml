@@ -23,8 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b938d729-0b7b-4944-a8df-00d81855ca57" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/untitled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/untitled.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/index.html" afterDir="false" />
@@ -127,7 +126,17 @@
       <workItem from="1605104746871" duration="1187000" />
       <workItem from="1605658677146" duration="2211000" />
       <workItem from="1605704518286" duration="615000" />
+      <workItem from="1606819143395" duration="17000" />
+      <workItem from="1606825485553" duration="1105000" />
     </task>
+    <task id="LOCAL-00001" summary="Feats:修改部分参数">
+      <created>1606819055535</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606819055535</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,10 +169,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="464" y="196" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1603880102144" />
-    <state x="675" y="185" key="FileChooserDialogImpl" timestamp="1605104770832">
+    <state x="675" y="185" key="FileChooserDialogImpl" timestamp="1606819083257">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="675" y="185" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605104770832" />
+    <state x="675" y="185" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606819083257" />
     <state width="1510" height="245" key="GridCell.Tab.0.bottom" timestamp="1603888659088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -232,10 +241,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="-10" y="0" width="1139" height="824" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1605659213014" />
-    <state x="261" y="81" key="Vcs.Push.Dialog.v2" timestamp="1605104821172">
+    <state x="261" y="81" key="Vcs.Push.Dialog.v2" timestamp="1606819067841">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="261" y="81" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605104821172" />
+    <state x="261" y="81" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606819067841" />
     <state x="587" y="343" width="617" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1603107144146">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

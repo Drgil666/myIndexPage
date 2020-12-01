@@ -70,7 +70,11 @@
     }
 </script>
 <div>
-    <button onclick="" class="setting_button">自定义</button>
+    <button onclick="" class="setting_button">更换壁纸</button>
+</div>
+<br/>
+<div>
+    <button onclick="" class="setting_button">设置</button>
 </div>
 <!--收藏夹-->
 <div class="bookmark">
@@ -85,7 +89,7 @@
                 console.log("rowIndex=" + rowIndex);
                 console.log("colsIndex=" + colsIndex);
                 let index = colsIndex + rowIndex * 2
-                document.write("<td class='bookmark_item' onclick='window.open(\"https://" + bookMarkList[index].url + "\")'>")
+                document.write("<td class='bookmark_item' onclick='window.open(\"http://" + bookMarkList[index].url + "\")'>")
                 document.write("<div>")
                 document.write("<img class='bookmark_img' src='" + bookMarkList[index].img + "' alt='图片加载失败!'>")
                 document.write("<div class='bookmark_nick'>")

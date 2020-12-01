@@ -13,13 +13,8 @@ function get() {
             "img": null
         },
         {
-            "url": "www.baidu.com",
-            "nick": "百度",
-            "img": null
-        },
-        {
-            "url": "www.codeforces.com",
-            "nick": "CodeForces",
+            "url": "acm.hdu.edu.cn",
+            "nick": "杭电oj",
             "img": null
         }
     ];
