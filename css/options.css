@@ -1,11 +1,11 @@
 .top_bar {
     position: absolute;
-    width: 100%;
+    width: 99.85%;
     left: 0;
     top: 0;
     height: 50px;
     background: black;
-    border: 0.5px solid white;
+    border: 0.25px solid white;
 }
 
 .top_bar .label {
@@ -19,11 +19,11 @@
 
 .left {
     position: absolute;
-    height: 100%;
+    height: 92.7%;
     left: 0;
     width: 300px;
-    top: 54px;
-    border: 0.5px solid white;
+    top: 52px;
+    border: 0.25px solid white;
     background: black;
 }
 
@@ -32,7 +32,7 @@
     height: 50px;
     left: 0;
     width: 298px;
-    border: 0.5px solid white;
+    border: 0.25px solid white;
     transition: all 0.5s;
 }
 
@@ -50,4 +50,37 @@
     left: 15px;
     top: 10px;
     background: transparent;
+}
+
+.back_button {
+    position: relative;
+
+    z-index: 2;
+    background: transparent;
+    outline: none;
+    border: 3px solid darkblue;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: 微软雅黑;
+    text-align: center;
+    color: white;
+    -webkit-text-stroke: 0.5px black;
+    width: 100px;
+    height: 50px;
+    transition: all 0.5s;
+}
+.back_button:hover {
+    opacity: 0.5;
+    transition: all 0.5s;
+}
+
+.back {
+    z-index: 30;
+    position:relative;
+    width: 100px;
+    height: 50px;
+    top: 70%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
