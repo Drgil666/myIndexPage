@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="../css/options.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="../css/index.css" media="all"/>
 </head>
-<body style="background-color:black;">
+<body>
 <div class="top_bar">
     <label class="label">设置</label>
 </div>
@@ -19,14 +19,16 @@
     <script>
         let optionList = getOptions();
         for (let index = 0; index < optionList.length; index++) {
-            document.write("<div class='item' onclick=''>");
+            document.write("<div class='item' onclick='modeSelect(index)'>");
             document.write("<label class='label'>" + optionList[index].name + "</label>");
             document.write("</div>");
         }
     </script>
     <div class="back">
-        <button onclick="window.open('index.html')" class="back_button">返回</button>
+        <button onclick="window.location.href='index.html'" class="back_button">返回</button>
     </div>
+</div>
+<div id="optionList" class="right">
 </div>
 </body>
 </html>

@@ -12,3 +12,14 @@ function getOptions() {
     ]
     return optionList;
 }
+function modeSelect(index){
+    let optionList=document.getElementById("optionList");
+    if(index===0){
+        let form=document.createElement("form");
+        let fileUpLoad=document.createElement("input");
+        fileUpLoad.type="file";
+        fileUpLoad.accept="image/*";
+        form=form.appendChild(fileUpLoad);
+        optionList.appendChild(form);
+    }
+}

@@ -20,6 +20,7 @@ function getBookMarkList() {
     ];
     for (let index = 0; index < bookMarkList.length; index++) {
         bookMarkList[index].img = "https://www.google.com/s2/favicons?domain=" + bookMarkList[index].url;
+        // bookMarkList[index].img = "http://tool.uuz.cc/icoapi/fav.php?url="+bookMarkList[index].url;
     }
     return bookMarkList
 }

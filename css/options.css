@@ -54,7 +54,6 @@
 
 .back_button {
     position: relative;
-
     z-index: 2;
     background: transparent;
     outline: none;
@@ -83,4 +82,13 @@
     left: 0;
     right: 0;
     margin: 0 auto;
+}
+.right{
+    position: absolute;
+    top:53.5px;
+    left:302px;
+    width: 80.35%;
+    height: 92.5%;
+    background-color: black;
+    color: white;
 }
