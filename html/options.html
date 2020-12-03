@@ -19,7 +19,7 @@
     <script>
         let optionList = getOptions();
         for (let index = 0; index < optionList.length; index++) {
-            document.write("<div class='item' onclick='modeSelect(index)'>");
+            document.write("<div class='item' onclick='modeSelect("+index+")'>");
             document.write("<label class='label'>" + optionList[index].name + "</label>");
             document.write("</div>");
         }
