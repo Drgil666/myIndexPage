@@ -1,6 +1,6 @@
 const url = '10.21.234.24:8080'
 
-function onload() {// 调试用启动项
+function onload() {
     // localStorage.removeItem("bookmark");
 }
 
@@ -16,7 +16,7 @@ function setBackImg() {
 function getBookMarkList() {
     console.log(JSON.parse(localStorage.getItem('bookmark')));
     let bookMarkList = JSON.parse(localStorage.getItem('bookmark'));
-    if (bookMarkList === null) {
+    if (bookMarkList===null || bookMarkList.length === 0) {
         bookMarkList = [
             {
                 'url': 'www.baidu.com',
