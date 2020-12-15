@@ -12,7 +12,7 @@
     position: relative;
     top: 7px;
     left: 25px;
-    font-family: 微软雅黑;
+    font-family: 微软雅黑,serif;
     font-size: 25px;
     color: white;
 }
@@ -44,7 +44,7 @@
 
 .left .item .label {
     position: relative;
-    font-family: 微软雅黑;
+    font-family: 微软雅黑,serif;
     font-size: 20px;
     color: white;
     left: 15px;
@@ -60,7 +60,7 @@
     border: 3px solid darkblue;
     border-radius: 10px;
     font-size: 20px;
-    font-family: 微软雅黑;
+    font-family: 微软雅黑,serif;
     text-align: center;
     color: white;
     -webkit-text-stroke: 0.5px black;
@@ -72,7 +72,6 @@
     opacity: 0.5;
     transition: all 0.5s;
 }
-
 .back {
     z-index: 30;
     position:relative;

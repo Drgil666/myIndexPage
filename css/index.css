@@ -1,5 +1,5 @@
 .body {
-    background-image: url("../image/background/background.jpg");
+    /*background-image: url("../image/background/background.jpg");*/
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
@@ -154,7 +154,7 @@
     border: 3px solid darkblue;
     border-radius: 10px;
     font-size: 20px;
-    font-family: 微软雅黑;
+    font-family: 微软雅黑,serif;
     text-align: center;
     color:white;
     -webkit-text-stroke:0.5px black;

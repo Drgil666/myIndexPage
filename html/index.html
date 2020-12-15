@@ -10,7 +10,7 @@
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/index.css" media="all"/>
 </head>
-<body class="body">
+<body class="body" onload="setBackImg()">
 <!--搜索框主体+图片-->
 <div class="search" name="search">
     <!--    搜索框LOGO-->
@@ -19,7 +19,7 @@
     <div class="search_background"></div>
     <form name="search_form" action="" onsubmit="search()" method="get">
         <!--        搜索类型列表-->
-        <select class="search_select" name="search_select">
+        <select  class="search_select" name="search_select">
             <option value="google">Google</option>
             <option value="baidu" selected>百度</option>
             <option value="google_trans">谷歌翻译</option>
@@ -27,7 +27,7 @@
             <option value="github">Github</option>
         </select>
         <!--        搜索框-->
-        <input class="search_keyword" name="keyword" autocomplete="off" spellcheck="false" type="text"
+        <input id="keyword" class="search_keyword" name="keyword" autocomplete="off" spellcheck="false" type="text"
                placeholder="在这里搜索"/>
     </form>
 </div>
@@ -80,8 +80,6 @@
         for (let rowIndex = 0; rowIndex < bookMarkList.length / 2; rowIndex++) {
             document.write("<tr>")
             for (let colsIndex = 0; colsIndex + rowIndex * 2 < bookMarkList.length && colsIndex <= 1; colsIndex++) {
-                console.log("rowIndex=" + rowIndex);
-                console.log("colsIndex=" + colsIndex);
                 let index = colsIndex + rowIndex * 2
                 document.write("<td class='bookmark_item' onclick='window.open(\"http://" + bookMarkList[index].url + "\")'>")
                 document.write("<div>")
@@ -97,6 +95,5 @@
         document.write("</table>")
     </script>
 </div>
-
 </body>
 </html>
