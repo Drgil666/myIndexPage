@@ -7,6 +7,8 @@ function getOptions() {
         "name": "壁纸设置",
     }, {
         "name": "收藏夹设置"
+    }, {
+        "name": "导航栏设置"
     }
     ];
 }
@@ -20,6 +22,8 @@ function modeSelect(index) {
         modeBackImg();
     } else if (index === 1) {
         modeBookMark();
+    } else if (index === 2) {
+        modeInk();
     }
 }
 
@@ -78,7 +82,7 @@ function isValidUrl(url) {
 function modeBookMark() {
     let optionList = document.getElementById("optionList");
     optionList.innerHTML = "";
-    let bookmarkList = JSON.parse(localStorage.getItem('bookmark'));
+    let bookMarkList = JSON.parse(localStorage.getItem('bookmark'));
     let listDiv = document.createElement("div");
     listDiv.id = "listDiv";
     listDiv.name = "listDiv";
@@ -87,7 +91,7 @@ function modeBookMark() {
     listDiv.style.height = "auto";
     listDiv.style.top = "150px";
     listDiv.style.left = "100px";
-    for (let i = 0; i < bookmarkList.length; i++) {
+    for (let i = 0; i < bookMarkList.length; i++) {
         let bookmarkDiv = document.createElement("div");
         bookmarkDiv.id = "listItem-" + i;
         bookmarkDiv.name = "listItem-" + i;
@@ -98,7 +102,7 @@ function modeBookMark() {
         item_nick.id = "item_nick-" + i;
         item_nick.name = "item_nick-" + i;
         item_nick.type = "text";
-        item_nick.value = bookmarkList[i].nick;
+        item_nick.value = bookMarkList[i].nick;
         item_nick.style.position = "relative";
         item_nick.style.left = "20px";
         item_nick.style.width = "100px";
@@ -109,13 +113,15 @@ function modeBookMark() {
         item_nick.style.color = "white";
         item_nick.style.outline = "0px";
         item_nick.onchange = function () {
-            alert("修改名字成功!");
+            console.log(item_nick.value);
+            bookMarkList[i].nick = item_nick.value;
+            localStorage.setItem("bookmark", JSON.stringify(bookMarkList));
         }
         let item_url = document.createElement("input");
         item_url.id = "item_url-" + i;
         item_url.name = "item_url-" + i;
         item_url.type = "text";
-        item_url.value = bookmarkList[i].url;
+        item_url.value = bookMarkList[i].url;
         item_url.style.position = "relative";
         item_url.style.left = "50px";
         item_url.style.width = "200px";
@@ -127,7 +133,13 @@ function modeBookMark() {
         item_url.style.color = "white";
         item_url.style.outline = "0px";
         item_url.onchange = function () {
-            alert("修改链接成功!")
+            console.log(item_url.value);
+            if (isValidUrl(item_url.value)) {
+                bookMarkList[i].url = item_url.value;
+                localStorage.setItem("bookmark", JSON.stringify(bookMarkList));
+            }else{
+                alert("网站地址不合法!")
+            }
         }
         let item_del_button = document.createElement("button");
         item_del_button.id = "item_del_button" + i;
@@ -139,8 +151,8 @@ function modeBookMark() {
             if (confirm("确定要删除吗?")) {
                 // this.parentNode.parentNode.removeChild(this.parentNode);
                 console.log(i);
-                bookmarkList.splice(i, 1);
-                localStorage.setItem('bookmark', JSON.stringify(bookmarkList));
+                bookMarkList.splice(i, 1);
+                localStorage.setItem('bookmark', JSON.stringify(bookMarkList));
                 modeBookMark();
             }
         }
@@ -162,9 +174,9 @@ function modeBookMark() {
                     let bookmarkDiv = {};
                     bookmarkDiv.nick = bookmarkName;
                     bookmarkDiv.url = bookmarkUrl;
-                    bookmarkList.push(bookmarkDiv);
-                    console.log(bookmarkList);
-                    localStorage.setItem('bookmark', JSON.stringify(bookmarkList));
+                    bookMarkList.push(bookmarkDiv);
+                    console.log(bookMarkList);
+                    localStorage.setItem('bookmark', JSON.stringify(bookMarkList));
                     modeBookMark();
                     alert("添加成功!");
                 } else {
@@ -175,4 +187,9 @@ function modeBookMark() {
     }
     listDiv.appendChild(addButton);
     optionList.appendChild(listDiv);
+}
+
+function modeInk() {
+    let optionList = document.getElementById("optionList");
+    optionList.innerHTML = "";
 }

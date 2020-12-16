@@ -7,7 +7,7 @@
 }
 
 .search {
-    z-index: -2;
+    z-index: 20;
     position: fixed;
     width: 620px;
     height: 300px;
@@ -25,6 +25,7 @@
     height: 200px;
     position: absolute;
     background: transparent;
+    border-radius: 100px;
     top: 10%;
     left: 0;
     right: 0;
