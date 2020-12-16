@@ -7,8 +7,6 @@ function getOptions() {
         "name": "壁纸设置",
     }, {
         "name": "收藏夹设置"
-    }, {
-        "name": "导航栏设置"
     }
     ];
 }
@@ -137,7 +135,7 @@ function modeBookMark() {
             if (isValidUrl(item_url.value)) {
                 bookMarkList[i].url = item_url.value;
                 localStorage.setItem("bookmark", JSON.stringify(bookMarkList));
-            }else{
+            } else {
                 alert("网站地址不合法!")
             }
         }
