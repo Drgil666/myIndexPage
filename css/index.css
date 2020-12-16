@@ -149,15 +149,15 @@
 
 .setting_button {
     z-index: 2;
-    background:transparent;
+    background: transparent;
     outline: none;
     border: 3px solid darkblue;
     border-radius: 10px;
     font-size: 20px;
-    font-family: 微软雅黑,serif;
+    font-family: 微软雅黑, serif;
     text-align: center;
-    color:white;
-    -webkit-text-stroke:0.5px black;
+    color: white;
+    -webkit-text-stroke: 0.5px black;
     width: 100px;
     height: 50px;
     transition: all 0.5s;

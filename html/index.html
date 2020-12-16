@@ -10,7 +10,7 @@
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/index.css" media="all"/>
 </head>
-<body class="body" onload="setBackImg()">
+<body class="body" onload="onload()">
 <!--搜索框主体+图片-->
 <div class="search" name="search">
     <!--    搜索框LOGO-->
@@ -19,7 +19,7 @@
     <div class="search_background"></div>
     <form name="search_form" action="" onsubmit="search()" method="get">
         <!--        搜索类型列表-->
-        <select  class="search_select" name="search_select">
+        <select class="search_select" name="search_select">
             <option value="google">Google</option>
             <option value="baidu" selected>百度</option>
             <option value="google_trans">谷歌翻译</option>

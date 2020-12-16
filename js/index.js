@@ -2,21 +2,8 @@ const url = '10.21.234.24:8080'
 
 function onload() {
     // localStorage.removeItem("bookmark");
-}
-
-function setBackImg() {
-    onload();
-    let img = localStorage.getItem('backImg');
-    if (img === null)
-        img = '../image/background/background.jpg';
-    // console.log(img);
-    document.getElementsByTagName('body')[0].background = img;
-}
-
-function getBookMarkList() {
-    console.log(JSON.parse(localStorage.getItem('bookmark')));
     let bookMarkList = JSON.parse(localStorage.getItem('bookmark'));
-    if (bookMarkList===null || bookMarkList.length === 0) {
+    if (bookMarkList === null || bookMarkList.length === 0) {
         bookMarkList = [
             {
                 'url': 'www.baidu.com',
@@ -35,12 +22,19 @@ function getBookMarkList() {
             }
         ];
         localStorage.setItem('bookmark', JSON.stringify(bookMarkList));
-        console.log(JSON.stringify(bookMarkList));
     }
+    let img = localStorage.getItem('backImg');
+    if (img === null)
+        img = '../image/background/background.jpg';
+    // console.log(img);
+    document.getElementsByTagName('body')[0].background = img;
+}
+
+
+function getBookMarkList() {
+    let bookMarkList = JSON.parse(localStorage.getItem('bookmark'));
     for (let index = 0; index < bookMarkList.length; index++) {
-        // bookMarkList[index].img = 'http://statics.dnspod.cn/proxy_favicon/_/favicon?domain=' + bookMarkList[index].url;
         bookMarkList[index].img = 'http://favicon.cccyun.cc/' + bookMarkList[index].url;
-        // console.log(bookMarkList[index].img)
     }
     return bookMarkList;
 }
