@@ -1,8 +1,9 @@
 .body {
     /*background-image: url("../image/background/background.jpg");*/
     background-repeat: no-repeat;
-    background-size: 100% 100%;
     background-attachment: fixed;
+    background-size:cover;
+    background-position: center;
 }
 
 .search {
