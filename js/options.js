@@ -7,6 +7,8 @@ function getOptions() {
         "name": "壁纸设置",
     }, {
         "name": "收藏夹设置"
+    }, {
+        "name": "用户设置"
     }
     ];
 }

@@ -2,7 +2,7 @@
     /*background-image: url("../image/background/background.jpg");*/
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size:cover;
+    background-size: cover;
     background-position: center;
 }
 
@@ -150,15 +150,20 @@
 }
 
 .setting_button {
+    position: absolute;
+    left: 20px;
+    bottom: 5px;
     z-index: 2;
     background: transparent;
     outline: none;
     border: 3px solid darkblue;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 25px;
     font-family: 微软雅黑, serif;
     text-align: center;
+    text-shadow: #000 2px 0 0, #000 0 2px 0, #000 -2px 0 0, #000 0 -2px 0;
     color: white;
+    opacity: 1;
     -webkit-text-stroke: 0.5px black;
     width: 100px;
     height: 50px;
@@ -166,6 +171,32 @@
 }
 
 .setting_button:hover {
+    opacity: 0.5;
+    transition: all 0.5s;
+}
+
+.user_button {
+    position: absolute;
+    top: 5px;
+    left: 25px;
+    z-index: 2;
+    background: transparent;
+    outline: none;
+    border: 3px solid darkblue;
+    border-radius: 10px;
+    font-size: 25px;
+    font-family: 微软雅黑, serif;
+    text-align: center;
+    color: white;
+    opacity: 1;
+    text-shadow: #000 2px 0 0, #000 0 2px 0, #000 -2px 0 0, #000 0 -2px 0;
+    -webkit-text-stroke: 0.5px black;
+    width: 100px;
+    height: 50px;
+    transition: all 0.5s;
+}
+
+.user_button:hover {
     opacity: 0.5;
     transition: all 0.5s;
 }
