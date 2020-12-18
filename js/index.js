@@ -62,7 +62,7 @@ function getBookMarkList() {
     return bookMarkList;
 }
 
-function getUser(userId) {
+function getUser() {
     $.ajax({
         type: 'get',
         url: url + '/api/user',
@@ -70,7 +70,7 @@ function getUser(userId) {
         async: false,
         contentType: 'application/json;charset=utf-8',
         data: {
-            'userId': userId
+            'userId': localStorage.getItem("userId")
         },
         success: function (result) {
             user = result.data
