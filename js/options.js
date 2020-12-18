@@ -2,6 +2,9 @@ function onload() {
 
 }
 
+const url = 'http://10.21.234.24:8080'
+let bookMarkList = null;
+
 function getOptions() {
     return [{
         "name": "壁纸设置",
@@ -11,6 +14,70 @@ function getOptions() {
         "name": "用户设置"
     }
     ];
+}
+
+function updateUser(data) {
+    $.ajax({
+            type: 'post',
+            url: url+'/api/user',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json;charset=utf-8',
+            data: JSON.stringify({
+                'method': 'update',
+                'data': data,
+                'key': []
+            }),
+            success: function (result) {
+                console.log(result)
+            },
+            error: function (e) {
+                console.log(e)
+            }
+        }
+    )
+}
+
+function updateBookMark(data) {
+    $.ajax({
+            type: 'post',
+            url: url + '/api/bookmark',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json;charset=utf-8',
+            data: JSON.stringify({
+                'method': 'update',
+                'data': data,
+                'key': []
+            }),
+            success: function (result) {
+                console.log(result)
+            },
+            error: function (e) {
+                console.log(e)
+            }
+        }
+    )
+}
+
+function getBookMark() {
+    $.ajax({
+        type: 'get',
+        url: 'http://10.21.234.24:8080/api/bookmark',
+        dataType: 'json',
+        async: false,
+        contentType: 'application/json;charset=utf-8',
+        data: {
+            'userId': localStorage.getItem("userId")
+        },
+        success: function (result) {
+            console.log(result.data)
+            bookMarkList = result.data;
+        },
+        error: function (e) {
+            console.log(e)
+        }
+    })
 }
 
 function modeSelect(index) {
@@ -82,7 +149,8 @@ function isValidUrl(url) {
 function modeBookMark() {
     let optionList = document.getElementById("optionList");
     optionList.innerHTML = "";
-    let bookMarkList = JSON.parse(localStorage.getItem('bookmark'));
+    getBookMark();
+    // console.log(bookMarkList);
     let listDiv = document.createElement("div");
     listDiv.id = "listDiv";
     listDiv.name = "listDiv";
@@ -91,7 +159,7 @@ function modeBookMark() {
     listDiv.style.height = "auto";
     listDiv.style.top = "150px";
     listDiv.style.left = "100px";
-    for (let i = 0; i < bookMarkList.length; i++) {
+    for (let i = 0; i < bookMarkList.bookMarkItemList.length; i++) {
         let bookmarkDiv = document.createElement("div");
         bookmarkDiv.id = "listItem-" + i;
         bookmarkDiv.name = "listItem-" + i;
@@ -102,7 +170,7 @@ function modeBookMark() {
         item_nick.id = "item_nick-" + i;
         item_nick.name = "item_nick-" + i;
         item_nick.type = "text";
-        item_nick.value = bookMarkList[i].nick;
+        item_nick.value = bookMarkList.bookMarkItemList[i].nick;
         item_nick.style.position = "relative";
         item_nick.style.left = "20px";
         item_nick.style.width = "100px";
@@ -114,14 +182,14 @@ function modeBookMark() {
         item_nick.style.outline = "0px";
         item_nick.onchange = function () {
             console.log(item_nick.value);
-            bookMarkList[i].nick = item_nick.value;
-            localStorage.setItem("bookmark", JSON.stringify(bookMarkList));
+            bookMarkList.bookMarkItemList[i].nick = item_nick.value;
+            updateBookMark(bookMarkList);
         }
         let item_url = document.createElement("input");
         item_url.id = "item_url-" + i;
         item_url.name = "item_url-" + i;
         item_url.type = "text";
-        item_url.value = bookMarkList[i].url;
+        item_url.value = bookMarkList.bookMarkItemList[i].url;
         item_url.style.position = "relative";
         item_url.style.left = "50px";
         item_url.style.width = "200px";
@@ -135,8 +203,8 @@ function modeBookMark() {
         item_url.onchange = function () {
             console.log(item_url.value);
             if (isValidUrl(item_url.value)) {
-                bookMarkList[i].url = item_url.value;
-                localStorage.setItem("bookmark", JSON.stringify(bookMarkList));
+                bookMarkList.bookMarkItemList[i].url = item_url.value;
+                updateBookMark(bookMarkList);
             } else {
                 alert("网站地址不合法!")
             }
@@ -151,8 +219,8 @@ function modeBookMark() {
             if (confirm("确定要删除吗?")) {
                 // this.parentNode.parentNode.removeChild(this.parentNode);
                 console.log(i);
-                bookMarkList.splice(i, 1);
-                localStorage.setItem('bookmark', JSON.stringify(bookMarkList));
+                bookMarkList.bookMarkItemList.splice(i, 1);
+                updateBookMark(bookMarkList);
                 modeBookMark();
             }
         }
@@ -174,9 +242,9 @@ function modeBookMark() {
                     let bookmarkDiv = {};
                     bookmarkDiv.nick = bookmarkName;
                     bookmarkDiv.url = bookmarkUrl;
-                    bookMarkList.push(bookmarkDiv);
-                    console.log(bookMarkList);
-                    localStorage.setItem('bookmark', JSON.stringify(bookMarkList));
+                    bookMarkList.bookMarkItemList.push(bookmarkDiv);
+                    console.log(bookMarkList.bookMarkItemList);
+                    updateBookMark(bookMarkList);
                     modeBookMark();
                     alert("添加成功!");
                 } else {

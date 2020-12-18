@@ -31,64 +31,32 @@
                placeholder="在这里搜索"/>
     </form>
 </div>
-<!--跳转对应的网页-->
-<script>
-    function search() {
-        let value = document.forms["search_form"]["search_select"].value;
-        let keyword = document.forms["search_form"]["keyword"].value;
-        if (keyword !== "") {
-            console.log("value=" + value);
-            console.log("keyword=" + keyword);
-            window.event.returnValue = false;
-            switch (value) {
-                case "google": {
-                    window.location.href = "https://www.google.com/search?q=" + keyword;
-                    break;
-                }
-                case "baidu": {
-                    window.location.href = "https://www.baidu.com/s?wd=" + keyword;
-                    break;
-                }
-                case "google_trans": {
-                    window.location.href = "https://translate.google.com/#view=home&op=translate&sl=en&tl=zh-CN&text=" + keyword;
-                    break;
-                }
-                case "baidu_trans": {
-                    window.location.href = "https://fanyi.baidu.com/#en/zh/" + keyword;
-                    break;
-                }
-                case "github": {
-                    window.location.href = "https://github.com/search?q=" + keyword;
-                    break;
-                }
-                default: {
-                    alert("表单信息错误!");
-                    break;
-                }
-            }
-        }
-    }
-</script>
 <div>
-    <button onclick="window.location.href='options.html'" class="setting_button">设置</button>
+    <button onclick="window.location.href='options.html';" class="setting_button">设置</button>
 </div>
 <div>
-    <button class="user_button">用户</button>
+    <button id="user_button" class="user_button"></button>
+    <div class="user_info">
+        <label id="user_info_nick" class="user_info_nick">您未登录</label>
+        <label id="user_info_username" class="user_info_username">您未登录</label>
+        <button id="user_info_setting" class="user_info_setting" onclick="window.location.href='options.html'"></button>
+    </div>
 </div>
+
 <!--收藏夹-->
 <div class="bookmark">
     <script>
         document.write("<table cellspacing='15' class='bookmark_table'>")
-        let bookMarkList = getBookMarkList()
-        for (let rowIndex = 0; rowIndex < bookMarkList.length / 2; rowIndex++) {
+        getBookMarkList();
+        for (let rowIndex = 0; rowIndex < bookMarkList.bookMarkItemList.length / 2; rowIndex++) {
             document.write("<tr>")
-            for (let colsIndex = 0; colsIndex + rowIndex * 2 < bookMarkList.length && colsIndex <= 1; colsIndex++) {
+            for (let colsIndex = 0; colsIndex + rowIndex * 2 < bookMarkList.bookMarkItemList.length && colsIndex <= 1; colsIndex++) {
                 let index = colsIndex + rowIndex * 2
-                document.write("<td class='bookmark_item' onclick='window.open(\"http://" + bookMarkList[index].url + "\")'>")
+                document.write("<td class='bookmark_item' onclick='window.open(\"http://" + bookMarkList.bookMarkItemList[index].url + "\")'>")
                 document.write("<div>")
-                document.write("<img class='bookmark_img' src='" + bookMarkList[index].img + "' alt='图片加载失败!'>")
+                document.write("<img class='bookmark_img' src='" + bookMarkList.bookMarkItemList[index].img + "' alt='图片加载失败!'>")
                 document.write("<div class='bookmark_nick'>")
-                document.write(bookMarkList[index].nick)
+                document.write(bookMarkList.bookMarkItemList[index].nick)
                 document.write("</div>")
                 document.write("</div>")
                 document.write("<td>")
