@@ -172,8 +172,11 @@
 }
 
 .user_button {
-    background-image: url("../image/ui/user_logo.png");
-    background-size: auto;
+    /*background-image: url("../image/ui/user_logo.png");*/
+    /*background-repeat: no-repeat;*/
+    /*background-attachment: fixed;*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
     position: absolute;
     top: 15px;
     left: 15px;
@@ -240,8 +243,8 @@
 
 .user_info_setting {
     position: absolute;
-    top: 120px;
-    left: 160px;
+    top: 150px;
+    left: 330px;
     width: 50px;
     outline: none;
     height: 50px;
@@ -254,6 +257,72 @@
 }
 
 .user_info_setting:hover {
+    opacity: 0.5;
+    transition: all 0.5s;
+}
+
+.user_info_login_username {
+    position: absolute;
+    top: 140px;
+    left: 10px;
+    font-family: 微软雅黑, serif;
+    font-size: 20px;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+}
+
+.user_info_login_password {
+    position: absolute;
+    top: 180px;
+    left: 10px;
+    font-family: 微软雅黑, serif;
+    font-size: 20px;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+}
+
+.user_info_login {
+    position: absolute;
+    top: 150px;
+    left: 260px;
+    width: 50px;
+    outline: none;
+    height: 50px;
+    border: 0.5px solid white;
+    border-radius: 25px;
+    background-image: url("../image/ui/login.png");
+    background-color: blue;
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.user_info_login:hover {
+    opacity: 0.5;
+    transition: all 0.5s;
+}
+
+.user_info_logout {
+    position: absolute;
+    top: 150px;
+    left: 260px;
+    width: 50px;
+    outline: none;
+    height: 50px;
+    border: 0.5px solid white;
+    border-radius: 25px;
+    background-image: url("../image/ui/logout.png");
+    background-color: blue;
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.user_info_logout:hover {
     opacity: 0.5;
     transition: all 0.5s;
 }

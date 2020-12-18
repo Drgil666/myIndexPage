@@ -35,8 +35,13 @@
     <button id="user_button" class="user_button"></button>
     <div class="user_info">
         <label id="user_info_nick" class="user_info_nick">您未登录</label>
-        <label id="user_info_username" class="user_info_username">您未登录</label>
-        <button id="user_info_setting" class="user_info_setting" onclick="window.location.href='options.html'"></button>
+        <label id="user_info_username" hidden="hidden" class="user_info_username">您未登录</label>
+        <input id="user_info_login_username" class="user_info_login_username" type="text" value=""/>
+        <input id="user_info_login_password" class="user_info_login_password" type="password" value=""/>
+        <button title="登录" id="user_info_login" class="user_info_login" onclick="login()"></button>
+        <button title="注销" id="user_info_logout" class="user_info_logout" onclick="logout()" hidden="hidden"></button>
+        <button title="设置" id="user_info_setting" class="user_info_setting"
+                onclick="window.location.href='options.html'"></button>
     </div>
 </div>
 
@@ -44,23 +49,25 @@
 <div class="bookmark">
     <script>
         document.write("<table cellspacing='15' class='bookmark_table'>")
-        getBookMarkList();
-        for (let rowIndex = 0; rowIndex < bookMarkList.bookMarkItemList.length / 2; rowIndex++) {
-            document.write("<tr>")
-            for (let colsIndex = 0; colsIndex + rowIndex * 2 < bookMarkList.bookMarkItemList.length && colsIndex <= 1; colsIndex++) {
-                let index = colsIndex + rowIndex * 2
-                document.write("<td class='bookmark_item' onclick='window.open(\"http://" + bookMarkList.bookMarkItemList[index].url + "\")'>")
-                document.write("<div>")
-                document.write("<img class='bookmark_img' src='" + bookMarkList.bookMarkItemList[index].img + "' alt='图片加载失败!'>")
-                document.write("<div class='bookmark_nick'>")
-                document.write(bookMarkList.bookMarkItemList[index].nick)
-                document.write("</div>")
-                document.write("</div>")
-                document.write("<td>")
+        if (localStorage.getItem("userId") !== null) {
+            getBookMarkList();
+            for (let rowIndex = 0; rowIndex < bookMarkList.bookMarkItemList.length / 2; rowIndex++) {
+                document.write("<tr>")
+                for (let colsIndex = 0; colsIndex + rowIndex * 2 < bookMarkList.bookMarkItemList.length && colsIndex <= 1; colsIndex++) {
+                    let index = colsIndex + rowIndex * 2
+                    document.write("<td class='bookmark_item' onclick='window.open(\"http://" + bookMarkList.bookMarkItemList[index].url + "\")'>")
+                    document.write("<div>")
+                    document.write("<img class='bookmark_img' src='" + bookMarkList.bookMarkItemList[index].img + "' alt='图片加载失败!'>")
+                    document.write("<div class='bookmark_nick'>")
+                    document.write(bookMarkList.bookMarkItemList[index].nick)
+                    document.write("</div>")
+                    document.write("</div>")
+                    document.write("<td>")
+                }
+                document.write("</tr>")
             }
-            document.write("</tr>")
+            document.write("</table>")
         }
-        document.write("</table>")
     </script>
 </div>
 </body>

@@ -28,10 +28,11 @@ function onload() {
     userId = localStorage.getItem("userId");
     if (userId !== null) {
         getUser(userId);
-        setUserInfo();
     }
+    setUserInfo();
     // localStorage.removeItem("bookmark");
     let img = localStorage.getItem('backImg');
+    // console.log(img);
     if (img === null)
         img = '../image/background/background.jpg';
     // console.log(img);
@@ -39,26 +40,45 @@ function onload() {
 }
 
 function setUserInfo() {
-    console.log(user);
-    let img = document.getElementById("user_button");
-    if (userId !== null)
-        img.backgroundImage = user.img;
-    let username = document.getElementById("user_info_username");
     if (userId !== null) {
+        document.getElementById("user_info_login_username").hidden = true;
+        document.getElementById("user_info_login_password").hidden = true;
+        document.getElementById("user_info_login").hidden = true;
+        document.getElementById("user_info_logout").hidden = false;
+        document.getElementById("user_info_username").hidden = false;
+    } else {
+        document.getElementById("user_info_login_username").hidden = false;
+        document.getElementById("user_info_login_password").hidden = false;
+        document.getElementById("user_info_login").hidden = false;
+        document.getElementById("user_info_logout").hidden = true;
+        document.getElementById("user_info_username").hidden = true;
+    }
+    console.log(userId);
+    console.log(user)
+    let img = document.getElementById("user_button");
+    if (userId !== null && user.img !== null)
+        img.style.backgroundImage = "url('" + user.img + "')";
+    else {
+        img.style.backgroundImage = "url('../image/ui/user_logo.png')";
+    }
+    let username = document.getElementById("user_info_username");
+    if (userId !== null && user.username !== null) {
         username.innerHTML = user.username;
     }
     let nick = document.getElementById("user_info_nick");
-    if (userId !== null) {
+    if (userId !== null && user.nick !== null) {
         nick.innerHTML = user.nick;
     }
 }
 
 function getBookMarkList() {
-    getBookMark();
-    for (let index = 0; index < bookMarkList.bookMarkItemList.length; index++) {
-        bookMarkList.bookMarkItemList[index].img = 'http://favicon.cccyun.cc/' + bookMarkList.bookMarkItemList[index].url;
+    if (localStorage.getItem("userId") !== null) {
+        getBookMark();
+        for (let index = 0; index < bookMarkList.bookMarkItemList.length; index++) {
+            bookMarkList.bookMarkItemList[index].img = 'http://favicon.cccyun.cc/' + bookMarkList.bookMarkItemList[index].url;
+        }
+        // console.log(bookMarkList);
     }
-    // console.log(bookMarkList);
     return bookMarkList;
 }
 
@@ -86,6 +106,7 @@ function get_request_demo() {
         type: 'get',
         url: 'http://10.21.234.24:8080/api/user',
         dataType: 'json',
+        async: false,
         contentType: 'application/json;charset=utf-8',
         data: {
             'userId': 1
@@ -104,6 +125,7 @@ function post_request_demo() {
             type: 'post',
             url: 'http://10.21.234.24:8080/api/user',
             dataType: 'json',
+            async: false,
             contentType: 'application/json;charset=utf-8',
             data: JSON.stringify({
                 'method': 'create',
@@ -163,4 +185,42 @@ function search() {
             }
         }
     }
+}
+
+function login() {
+    let username = document.getElementById("user_info_login_username").value;
+    let password = document.getElementById("user_info_login_password").value;
+    console.log(username);
+    console.log(password);
+    $.ajax({
+            type: 'post',
+            url: 'http://10.21.234.24:8080/api/user/login',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json;charset=utf-8',
+            data: JSON.stringify({
+                'username': username,
+                "password": password
+            }),
+            success: function (result) {
+                console.log(result)
+                if (result.code === 0) {
+                    localStorage.setItem("userId", result.data);
+                    alert("登录成功!");
+                    location.reload();
+                } else {
+                    alert("用户名或密码错误!")
+                }
+            },
+            error: function (e) {
+                console.log(e)
+                alert("连接失败!");
+            }
+        }
+    )
+}
+
+function logout() {
+    localStorage.removeItem("userId");
+    location.reload();
 }
