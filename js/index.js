@@ -46,12 +46,14 @@ function setUserInfo() {
         document.getElementById("user_info_login").hidden = true;
         document.getElementById("user_info_logout").hidden = false;
         document.getElementById("user_info_username").hidden = false;
+        document.getElementById("switch").hidden=true;
     } else {
         document.getElementById("user_info_login_username").hidden = false;
         document.getElementById("user_info_login_password").hidden = false;
         document.getElementById("user_info_login").hidden = false;
         document.getElementById("user_info_logout").hidden = true;
         document.getElementById("user_info_username").hidden = true;
+        document.getElementById("switch").hidden=false;
     }
     console.log(userId);
     console.log(user)
@@ -190,34 +192,68 @@ function search() {
 function login() {
     let username = document.getElementById("user_info_login_username").value;
     let password = document.getElementById("user_info_login_password").value;
+    let switch_btn = document.getElementById("btn_switch").checked;
     console.log(username);
     console.log(password);
-    $.ajax({
-            type: 'post',
-            url: 'http://10.21.234.24:8080/api/user/login',
-            dataType: 'json',
-            async: false,
-            contentType: 'application/json;charset=utf-8',
-            data: JSON.stringify({
-                'username': username,
-                "password": password
-            }),
-            success: function (result) {
-                console.log(result)
-                if (result.code === 0) {
-                    localStorage.setItem("userId", result.data);
-                    alert("登录成功!");
-                    location.reload();
-                } else {
-                    alert("用户名或密码错误!")
+    if (username.length > 0 && password.length > 0) {
+        if (switch_btn === false) {
+            $.ajax({
+                type: 'post',
+                url: url + '/api/user/login',
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json;charset=utf-8',
+                data: JSON.stringify({
+                    'username': username,
+                    "password": password
+                }),
+                success: function (result) {
+                    console.log(result)
+                    if (result.code === 0) {
+                        localStorage.setItem("userId", result.data);
+                        alert("登录成功!");
+                        location.reload();
+                    } else {
+                        alert(result.msg)
+                    }
+                },
+                error: function (e) {
+                    console.log(e)
+                    alert("连接失败!");
                 }
-            },
-            error: function (e) {
-                console.log(e)
-                alert("连接失败!");
-            }
+            })
         }
-    )
+        else if (switch_btn === true) {
+            $.ajax({
+                type: 'post',
+                url: url + '/api/user',
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json;charset=utf-8',
+                data: JSON.stringify({
+                    'method': 'create',
+                    'key': [],
+                    'data': {
+                        'username': username,
+                        "password": password
+                    }
+                }),
+                success: function (result) {
+                    console.log(result)
+                    if (result.code === 0) {
+                        alert("注册成功!");
+                        location.reload();
+                    } else {
+                        alert(result.msg);
+                    }
+                },
+                error: function (e) {
+                    console.log(e)
+                    alert("连接失败!");
+                }
+            })
+        }
+    }
 }
 
 function logout() {

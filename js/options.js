@@ -50,6 +50,11 @@ function updateUser() {
             }),
             success: function (result) {
                 console.log(result)
+                if (result.code === 0) {
+                    alert("更新用户成功!");
+                } else {
+                    alert(result.msg);
+                }
             },
             error: function (e) {
                 console.log(e)

@@ -34,14 +34,21 @@
 <div>
     <button id="user_button" class="user_button"></button>
     <div class="user_info">
-        <label id="user_info_nick" class="user_info_nick">您未登录</label>
-        <label id="user_info_username" hidden="hidden" class="user_info_username">您未登录</label>
-        <input id="user_info_login_username" class="user_info_login_username" type="text" value=""/>
-        <input id="user_info_login_password" class="user_info_login_password" type="password" value=""/>
+        <label id="user_info_nick" class="user_info_nick">默认昵称</label>
+        <label id="user_info_username" hidden="hidden" class="user_info_username">默认用户名</label>
+        <input id="user_info_login_username" class="user_info_login_username" type="text" value="">
+        <input id="user_info_login_password" class="user_info_login_password" type="password" value="">
         <button title="登录" id="user_info_login" class="user_info_login" onclick="login()"></button>
         <button title="注销" id="user_info_logout" class="user_info_logout" onclick="logout()" hidden="hidden"></button>
         <button title="设置" id="user_info_setting" class="user_info_setting"
                 onclick="window.location.href='options.html'"></button>
+        <div id="switch" class="switch">
+            <input class="switch-checkbox" id="btn_switch" type="checkbox">
+            <label class="switch-label" for="btn_switch">
+                <span class="switch-inner" data-on="登录" data-off="注册"></span>
+                <span class="switch-switch"></span>
+            </label>
+        </div>
     </div>
 </div>
 
